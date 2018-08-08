@@ -1,9 +1,20 @@
-pipeline {
-    agent { docker { image 'maven:3.3.3' label 'Docker' } }
+pipeline { 
+    agent any 
     stages {
-        stage('build') {
+        stage('Build') { 
+            steps { 
+                sh 'make' 
+            }
+        }
+        stage('Test'){
             steps {
-                sh 'mvn --version'
+                sh 'make check'
+                junit 'reports/**/*.xml' 
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'make publish'
             }
         }
     }
