@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { docker { image 'maven:3.3.3' } }
     tools { 
         maven 'Maven 3.5.4' 
         jdk 'jdk8' 
@@ -18,6 +18,7 @@ pipeline {
             steps {
                 echo 'This is a minimal pipeline.'
                 sh 'mvn -Dmaven.test.failure.ignore=true install'
+                sh 'echo "mvn- version"'
             }
         }
     }
