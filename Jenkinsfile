@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo 'This is a minimal pipeline.'
              
-                sh 'java -version'
+                sh 'mvn install -u'
             }
         }
     }
