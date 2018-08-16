@@ -16,7 +16,7 @@ pipeline {
 
         stage ('Build') {
             steps {
-                echo 'This is a minimal pipeline.'            
+                echo 'This is the minimal pipeline.'            
                 sh 'mvn install -u'
             }
         }
