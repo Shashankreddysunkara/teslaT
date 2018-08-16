@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo 'This is a minimal pipeline.'
              
-                sh 'echo "mvn -version"'
+                sh 'echo "mvn -version = ${mvn -version}"'
             }
         }
     }
