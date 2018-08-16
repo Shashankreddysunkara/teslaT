@@ -16,8 +16,7 @@ pipeline {
 
         stage ('Build') {
             steps {
-                echo 'This is the minimal pipeline.'            
-                sh 'sudo apt-get --only-upgrade install maven'
+                echo 'This is the minimal pipeline.'
             }
         }
     }
