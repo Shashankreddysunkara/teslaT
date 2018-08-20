@@ -4,7 +4,7 @@
       <activeByDefault>true</activeByDefault>
   </activation>   
   <properties>
-      <sonar.jdbc.url>jdbc:postgresql://localhost/sonar</sonar.jdbc.url>
+      <sonar.jdbc.url>jdbc:postgresql://http://18.217.246.135/sonar</sonar.jdbc.url>
       <sonar.jdbc.driver>org.postgresql.Driver</sonar.jdbc.driver>
       <sonar.jdbc.username>sonar</sonar.jdbc.username>
       <sonar.jdbc.password>sonar</sonar.jdbc.password>
