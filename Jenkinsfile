@@ -4,12 +4,12 @@ node{
    }
    stage('Build'){
       // Get maven home path
-      sh 'mvn install'
+      sh 'mvn -U -s settings.xml -gs settings.xml clean install'
    }
    
    stage('SonarQube Analysis') {        
         withSonarQubeEnv('SonarQube') { 
-          sh 'mvn install sonar:sonar'
+          sh 'mvn sonar:sonar'
         }
     }
 }
