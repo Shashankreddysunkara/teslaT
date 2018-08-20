@@ -1,15 +1,19 @@
-node{
-   stage('Checkout'){
-     checkout scm
-   }
-   stage('Build'){
-      // Get maven home path
-      sh 'mvn -U -s settings.xml -gs settings.xml clean install'
-   }
-   
-   stage('SonarQube Analysis') {        
-        withSonarQubeEnv('SonarQube') { 
-          sh 'mvn sonar:sonar'
+pipeline {
+    agent none 
+    stages {
+        stage('Example Build') {
+            agent { docker 'maven:3-alpine' } 
+            steps {
+                echo 'Hello, Maven'
+                sh 'mvn --version'
+            }
+        }
+        stage('Example Test') {
+            agent { docker 'openjdk:8-jre' } 
+            steps {
+                echo 'Hello, JDK'
+                sh 'java -version'
+            }
         }
     }
 }
